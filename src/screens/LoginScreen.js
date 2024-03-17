@@ -7,15 +7,17 @@ import {
   StyleSheet,
   ScrollView,
 } from "react-native";
-import { strings } from "../assets/strings";
+import { strings } from "../../assets/strings";
 
-const LoginScreen = () => {
+const LoginScreen = function({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // let email;
 
-  const handleLogin = () => {
+  const handleLogin = function() {
     console.log("Email:", email);
     console.log("Senha:", password);
+    navigation.navigate('JobList',  { userName: email })
   };
 
   return (
